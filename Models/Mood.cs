@@ -7,7 +7,5 @@ namespace moodi.Models
 {
     public class Mood
     {
-        string Name { get; set; }
-        int ID { get; set; }
     }
 }

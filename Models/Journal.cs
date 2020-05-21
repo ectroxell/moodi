@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace moodi.Models
 {
-    public class Moods
+    public class Journal
     {
+        public int ID { get; set; }
+        public string JournalEntry { get; set; }
     }
 }
