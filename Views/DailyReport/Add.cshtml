@@ -1,0 +1,15 @@
+﻿@model List<Mood>
+<h1>New Daily Report</h1>
+
+<form asp-controller="DailyReport" asp-action="Add" method="post">
+
+    @foreach(Mood mood in Model)
+    {
+        <ul>
+            <li>@mood.Name</li>
+        </ul>
+    }
+
+    <input type="submit" value="Add report" />
+
+</form>
