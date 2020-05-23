@@ -10,7 +10,9 @@ namespace moodi.Models
         public DateTime Date { get; set; }
         public int ID { get; set; }
         public Mood Mood { get; set; }
-        public Journal Journal { get; set; }
+        public int MoodID { get; set; }
+       // public Journal Journal { get; set; }
+       // public int JournalID { get; set; }
         
         
     }

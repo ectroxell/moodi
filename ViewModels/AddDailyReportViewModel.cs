@@ -1,4 +1,5 @@
-﻿using moodi.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using moodi.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +12,24 @@ namespace moodi.ViewModels
     {
         public DateTime Date { get; set; }
         [Required]
-        public Mood Mood { get; set; }
-        public string JournalEntry { get; set; }
+        [Display(Name ="Mood")]
+        public int MoodID { get; set; }
+        public List<SelectListItem> Moods { get; set; }
+        public AddDailyReportViewModel(IEnumerable<Mood> moods)
+        {
+            Moods = new List<SelectListItem>();
+
+            foreach (Mood mood in moods)
+            {
+                Moods.Add(new SelectListItem
+                {
+                    Value = mood.ID.ToString(),
+                    Text = mood.Name
+                });
+            }
+        }
+        public AddDailyReportViewModel()
+        {
+        }
     }
 }
