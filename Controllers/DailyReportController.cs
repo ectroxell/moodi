@@ -30,25 +30,19 @@ namespace moodi.Controllers
         
         public IActionResult Add()
         {
-
-            // create mood choices
-            Mood happy = new Mood("Happy");
-            Mood content = new Mood("Content");
-            Mood stressed = new Mood("Stressed");
-            Mood anxious = new Mood("Anxious");
-            Mood sad = new Mood("Sad");
-            Mood depressed = new Mood("Depressed");
-
-            // add mood choices to dbcontext
-
-            context.Moods.Add(happy);
-            context.Moods.Add(content);
-            context.Moods.Add(stressed);
-            context.Moods.Add(anxious);
-            context.Moods.Add(sad);
-            context.Moods.Add(depressed);
-
-            context.SaveChanges();
+            
+            if (!context.Moods.Any())
+            {
+                // create default mood choices
+                context.Moods.Add(new Mood() { Name = "Happy" });
+                context.Moods.Add(new Mood() { Name = "Content" });
+                context.Moods.Add(new Mood() { Name = "Energized" });
+                context.Moods.Add(new Mood() { Name = "Stressed" });
+                context.Moods.Add(new Mood() { Name = "Anxious" });
+                context.Moods.Add(new Mood() { Name = "Sad" });
+                context.Moods.Add(new Mood() { Name = "Depressed" });
+                context.SaveChanges();
+            }
 
             //create view model
             IList<Mood> moods = context.Moods.ToList();
