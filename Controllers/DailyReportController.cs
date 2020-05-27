@@ -30,6 +30,7 @@ namespace moodi.Controllers
         
         public IActionResult Add()
         {
+
             // create mood choices
             Mood happy = new Mood("Happy");
             Mood content = new Mood("Content");
