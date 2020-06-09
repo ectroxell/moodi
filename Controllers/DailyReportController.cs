@@ -9,6 +9,7 @@ using moodi.Data;
 using moodi.Models;
 using moodi.ViewModels;
 
+
 namespace moodi.Controllers
 {
     public class DailyReportController : Controller
@@ -34,15 +35,37 @@ namespace moodi.Controllers
             if (!context.Moods.Any())
             {
                 // create default mood choices
-                context.Moods.Add(new Mood() { Name = "Happy" });
-                context.Moods.Add(new Mood() { Name = "Content" });
-                context.Moods.Add(new Mood() { Name = "Energized" });
-                context.Moods.Add(new Mood() { Name = "Stressed" });
-                context.Moods.Add(new Mood() { Name = "Anxious" });
-                context.Moods.Add(new Mood() { Name = "Sad" });
-                context.Moods.Add(new Mood() { Name = "Depressed" });
+                context.Moods.Add(new Mood() { 
+                    Name = "Happy", 
+                    Meditation = new Meditation()
+                });
+                context.Moods.Add(new Mood() { 
+                    Name = "Content",
+                    Meditation = new Meditation()
+                });
+                context.Moods.Add(new Mood() { 
+                    Name = "Energized", 
+                    Meditation = new Meditation()
+                });
+                context.Moods.Add(new Mood() { 
+                    Name = "Stressed",
+                    Meditation = new Meditation()
+                });
+                context.Moods.Add(new Mood() { 
+                    Name = "Anxious",
+                    Meditation = new Meditation()
+                });
+                context.Moods.Add(new Mood() { 
+                    Name = "Sad",
+                    Meditation = new Meditation("Data/MeditationData/05_Loving_Kindness_Meditation.mp3")
+                });
+                context.Moods.Add(new Mood() { 
+                    Name = "Depressed",
+                    Meditation = new Meditation()    
+                });
                 context.SaveChanges();
             }
+
 
             //create view model
             IList<Mood> moods = context.Moods.ToList();
@@ -68,7 +91,7 @@ namespace moodi.Controllers
                 context.DailyReports.Add(newDailyReport);
                 context.SaveChanges();
 
-                return Redirect("/DailyReport");
+                return Redirect("/Meditation");
             }
             
             //return user to add page if view model is not valid

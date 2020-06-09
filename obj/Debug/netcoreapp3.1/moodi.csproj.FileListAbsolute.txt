@@ -150,8 +150,9 @@ C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnaly
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Add.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Index.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.csproj.CoreCompileInputs.cache
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Add.cshtml.g.cs
-C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Index.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\Meditation\Index.cshtml.g.cs

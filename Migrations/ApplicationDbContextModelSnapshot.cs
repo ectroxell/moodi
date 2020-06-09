@@ -239,6 +239,27 @@ namespace moodi.Migrations
                     b.ToTable("DailyReports");
                 });
 
+            modelBuilder.Entity("moodi.Models.Meditation", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Meditations");
+                });
+
             modelBuilder.Entity("moodi.Models.Mood", b =>
                 {
                     b.Property<int>("ID")
@@ -246,10 +267,15 @@ namespace moodi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("MeditationID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("MeditationID");
 
                     b.ToTable("Moods");
                 });
@@ -312,6 +338,13 @@ namespace moodi.Migrations
                         .HasForeignKey("MoodID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("moodi.Models.Mood", b =>
+                {
+                    b.HasOne("moodi.Models.Meditation", "Meditation")
+                        .WithMany()
+                        .HasForeignKey("MeditationID");
                 });
 #pragma warning restore 612, 618
         }
