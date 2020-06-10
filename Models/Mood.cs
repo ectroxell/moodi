@@ -10,12 +10,11 @@ namespace moodi.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public Meditation Meditation { get; set; }
 
-        public Mood(string name /*Meditation meditation*/)
+
+        public Mood(string name)
         {
             Name = name;
-           // Meditation = meditation;
         }
         public Mood ()
         {

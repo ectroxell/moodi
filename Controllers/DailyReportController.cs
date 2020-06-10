@@ -37,31 +37,31 @@ namespace moodi.Controllers
                 // create default mood choices
                 context.Moods.Add(new Mood() { 
                     Name = "Happy", 
-                    Meditation = new Meditation()
+                    
                 });
                 context.Moods.Add(new Mood() { 
                     Name = "Content",
-                    Meditation = new Meditation()
+                    
                 });
                 context.Moods.Add(new Mood() { 
                     Name = "Energized", 
-                    Meditation = new Meditation()
+                    
                 });
                 context.Moods.Add(new Mood() { 
                     Name = "Stressed",
-                    Meditation = new Meditation()
+                  
                 });
                 context.Moods.Add(new Mood() { 
                     Name = "Anxious",
-                    Meditation = new Meditation()
+                  
                 });
                 context.Moods.Add(new Mood() { 
                     Name = "Sad",
-                    Meditation = new Meditation("Data/MeditationData/05_Loving_Kindness_Meditation.mp3")
+                
                 });
                 context.Moods.Add(new Mood() { 
                     Name = "Depressed",
-                    Meditation = new Meditation()    
+       
                 });
                 context.SaveChanges();
             }
@@ -81,17 +81,19 @@ namespace moodi.Controllers
             if (ModelState.IsValid)
             {
                 Mood newDailyReportMood = context.Moods.Single(c => c.ID == addDailyReportViewModel.MoodID);
+                Journal newDailyReportJournal = new Journal(addDailyReportViewModel.JournalText);
                 DailyReport newDailyReport = new DailyReport
                 {
                     Date = DateTime.Now,
-                    Mood = newDailyReportMood
+                    Mood = newDailyReportMood,
+                    Journal = newDailyReportJournal
                 };
 
                 //add daily report to existing reports
                 context.DailyReports.Add(newDailyReport);
                 context.SaveChanges();
 
-                return Redirect("/Meditation");
+                return Redirect("/DailyReport");
             }
             
             //return user to add page if view model is not valid
