@@ -15,6 +15,7 @@ namespace moodi.ViewModels
         [Display(Name ="Mood")]
         public int MoodID { get; set; }
         public List<SelectListItem> Moods { get; set; }
+        [Display(Name ="Journal Entry")]
         public string JournalText { get; set; }
         public AddDailyReportViewModel(IEnumerable<Mood> moods)
         {

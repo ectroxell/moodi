@@ -10,8 +10,8 @@ using moodi.Data;
 namespace moodi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200609195505_Meditation")]
-    partial class Meditation
+    [Migration("20200610202603_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -231,35 +231,34 @@ namespace moodi.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("JournalID")
+                        .HasColumnType("int");
+
                     b.Property<int>("MoodID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("JournalID");
 
                     b.HasIndex("MoodID");
 
                     b.ToTable("DailyReports");
                 });
 
-            modelBuilder.Entity("moodi.Models.Meditation", b =>
+            modelBuilder.Entity("moodi.Models.Journal", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileLocation")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Meditations");
+                    b.ToTable("Journals");
                 });
 
             modelBuilder.Entity("moodi.Models.Mood", b =>
@@ -269,15 +268,10 @@ namespace moodi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("MeditationID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("MeditationID");
 
                     b.ToTable("Moods");
                 });
@@ -335,18 +329,17 @@ namespace moodi.Migrations
 
             modelBuilder.Entity("moodi.Models.DailyReport", b =>
                 {
+                    b.HasOne("moodi.Models.Journal", "Journal")
+                        .WithMany()
+                        .HasForeignKey("JournalID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("moodi.Models.Mood", "Mood")
                         .WithMany()
                         .HasForeignKey("MoodID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("moodi.Models.Mood", b =>
-                {
-                    b.HasOne("moodi.Models.Meditation", "Meditation")
-                        .WithMany()
-                        .HasForeignKey("MeditationID");
                 });
 #pragma warning restore 612, 618
         }

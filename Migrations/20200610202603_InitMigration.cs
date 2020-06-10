@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace moodi.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,19 @@ namespace moodi.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Journals",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Text = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Journals", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -172,11 +185,18 @@ namespace moodi.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(nullable: false),
-                    MoodID = table.Column<int>(nullable: false)
+                    MoodID = table.Column<int>(nullable: false),
+                    JournalID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DailyReports", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_DailyReports_Journals_JournalID",
+                        column: x => x.JournalID,
+                        principalTable: "Journals",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_DailyReports_Moods_MoodID",
                         column: x => x.MoodID,
@@ -225,6 +245,11 @@ namespace moodi.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DailyReports_JournalID",
+                table: "DailyReports",
+                column: "JournalID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DailyReports_MoodID",
                 table: "DailyReports",
                 column: "MoodID");
@@ -255,6 +280,9 @@ namespace moodi.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Journals");
 
             migrationBuilder.DropTable(
                 name: "Moods");

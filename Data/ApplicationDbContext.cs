@@ -11,9 +11,8 @@ namespace moodi.Data
     {
        public DbSet<DailyReport> DailyReports { get; set; }
        public DbSet<Mood> Moods { get; set; }
-        public DbSet<Meditation> Meditations { get; set; } 
 
-       //public DbSet<Journal> Journals { get; set; }
+       public DbSet<Journal> Journals { get; set; }
        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
