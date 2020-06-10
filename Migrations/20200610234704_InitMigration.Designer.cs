@@ -10,7 +10,7 @@ using moodi.Data;
 namespace moodi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200610202603_InitMigration")]
+    [Migration("20200610234704_InitMigration")]
     partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

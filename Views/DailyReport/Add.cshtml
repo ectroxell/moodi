@@ -7,11 +7,12 @@
     <div class="form-group">
         <label asp-for="MoodID"></label>
         <select asp-for="MoodID" asp-items="Model.Moods"></select>
+        <span asp-validation-for="MoodID"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="JournalText"></label>
-        <textarea class="form-control rounded-0" rows="7"></textarea>
+        <input class="form-control" asp-for="JournalText"/>
     </div>
 
     <input type="submit" value="Add report" />
