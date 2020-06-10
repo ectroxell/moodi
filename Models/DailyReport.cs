@@ -16,7 +16,8 @@ namespace moodi.Models
         public override string ToString()
         {
             string date = Date.ToShortDateString();
-            return $"{date}: {Mood.Name}";
+            string journal = Journal.Text;
+            return $"{date}: {Mood.Name}, {journal}";
         }
 
     }

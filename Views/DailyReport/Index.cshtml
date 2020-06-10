@@ -2,10 +2,10 @@
 <h1>My moodi</h1>
 
 <ul>
-@foreach (DailyReport dailyReport in Model)
-{
-    <li>@dailyReport.ToString()</li>
-}
+    @foreach (var dailyReport in Model)
+    {
+        <li>@dailyReport.ToString()</li>
+    }
 </ul>
 
 <a asp-controller="DailyReport" asp-action="Add">Make daily report</a>

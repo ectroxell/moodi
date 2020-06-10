@@ -24,7 +24,8 @@ namespace moodi.Controllers
         public IActionResult Index()
         {
             //get existing daily reports from database
-            IList<DailyReport> dailyReports = context.DailyReports.Include(c => c.Mood).ToList();
+            IList<DailyReport> dailyReports = context.DailyReports.Include(c => c.Mood).Include(c => c.Journal).ToList();
+                
 
             return View(dailyReports);
         }
@@ -35,34 +36,13 @@ namespace moodi.Controllers
             if (!context.Moods.Any())
             {
                 // create default mood choices
-                context.Moods.Add(new Mood() { 
-                    Name = "Happy", 
-                    
-                });
-                context.Moods.Add(new Mood() { 
-                    Name = "Content",
-                    
-                });
-                context.Moods.Add(new Mood() { 
-                    Name = "Energized", 
-                    
-                });
-                context.Moods.Add(new Mood() { 
-                    Name = "Stressed",
-                  
-                });
-                context.Moods.Add(new Mood() { 
-                    Name = "Anxious",
-                  
-                });
-                context.Moods.Add(new Mood() { 
-                    Name = "Sad",
-                
-                });
-                context.Moods.Add(new Mood() { 
-                    Name = "Depressed",
-       
-                });
+                context.Moods.Add(new Mood("Happy"));
+                context.Moods.Add(new Mood("Content"));
+                context.Moods.Add(new Mood("Energized"));
+                context.Moods.Add(new Mood("Stressed"));
+                context.Moods.Add(new Mood("Anxious"));
+                context.Moods.Add(new Mood("Sad"));
+                context.Moods.Add(new Mood("Depressed"));
                 context.SaveChanges();
             }
 
@@ -90,6 +70,7 @@ namespace moodi.Controllers
                 };
 
                 //add daily report to existing reports
+                context.Journals.Add(newDailyReportJournal);
                 context.DailyReports.Add(newDailyReport);
                 context.SaveChanges();
 
