@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
@@ -15,15 +16,18 @@ namespace moodi.Controllers
     public class DailyReportController : Controller
     {
         private ApplicationDbContext context;
+        //private UserManager<User> _userManager;
         public DailyReportController(ApplicationDbContext dbContext)
         {
             context = dbContext;
+        
         }
 
         // GET: /<controller>/
         public IActionResult Index()
         {
             //get existing daily reports from database
+            
             IList<DailyReport> dailyReports = context.DailyReports.Include(c => c.Mood).Include(c => c.Journal).ToList();
                 
 
@@ -74,11 +78,22 @@ namespace moodi.Controllers
                 context.DailyReports.Add(newDailyReport);
                 context.SaveChanges();
 
-                return Redirect("/DailyReport");
+                return View("PlayMeditation");
             }
             
             //return user to add page if view model is not valid
             return View(addDailyReportViewModel);
+        }
+
+        public IActionResult PlayMeditation()
+        {
+            
+            return View();
+        }
+
+        public IActionResult ViewDetails()
+        {
+            return View();
         }
     }
 }

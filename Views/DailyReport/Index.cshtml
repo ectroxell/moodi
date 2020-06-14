@@ -1,12 +1,30 @@
 ﻿@model List<DailyReport>
+<div>
 <h1>My moodi</h1>
+</div>
 
-<ul>
+<div class="table-hover">
+<table id="dailyReportTable" class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Date</th>
+            <th>Mood</th>
+            <th>Journal</th>
+        </tr>
+    </thead>
     @foreach (var dailyReport in Model)
     {
-        <li>@dailyReport.ToString()</li>
+        <a>
+        <tr>
+            <td>@dailyReport.Date.ToShortDateString()</td>
+            <td>@dailyReport.Mood.Name</td>
+            <td>@dailyReport.Journal.Text</td>
+        </tr>
+        </a>
     }
-</ul>
+</table>
+</div>
+
 
 <a asp-controller="DailyReport" asp-action="Add">Make daily report</a>
 

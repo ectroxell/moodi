@@ -14,9 +14,5 @@ namespace moodi.Models
             Text = text;
         }
         public Journal() { }
-        public override string ToString()
-        {
-            return $"{Text}";
-        }
     }
 }

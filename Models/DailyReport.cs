@@ -13,11 +13,11 @@ namespace moodi.Models
         public int MoodID { get; set; }
         public Journal Journal { get; set; }
         public int JournalID { get; set; }
-        public override string ToString()
+/*        public override string ToString()
         {
             string date = Date.ToShortDateString();
-            return $"{date}: {Mood.Name}, Journal: {Journal.Text}";
+            return $"{date}: {Mood.Name} || {Journal.Text}";
         }
-
+*/
     }
 }
