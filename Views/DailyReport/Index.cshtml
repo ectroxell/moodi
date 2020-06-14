@@ -12,16 +12,18 @@
             <th>Journal</th>
         </tr>
     </thead>
+    
     @foreach (var dailyReport in Model)
     {
-        <a>
         <tr>
-            <td>@dailyReport.Date.ToShortDateString()</td>
+            
+            <td><a asp-controller="DailyReport" asp-action="Details">@dailyReport.Date.ToShortDateString()</a></td>
             <td>@dailyReport.Mood.Name</td>
             <td>@dailyReport.Journal.Text</td>
+            
         </tr>
-        </a>
     }
+    
 </table>
 </div>
 

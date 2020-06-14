@@ -33,6 +33,13 @@ namespace moodi.Controllers
 
             return View(dailyReports);
         }
+
+        //view details for a specific report
+        public IActionResult Details(int id)
+        {
+            DailyReport dailyReport = context.DailyReports.Single(c => c.ID == id);
+            return View(dailyReport);
+        }
         
         public IActionResult Add()
         {
@@ -91,9 +98,6 @@ namespace moodi.Controllers
             return View();
         }
 
-        public IActionResult ViewDetails()
-        {
-            return View();
-        }
+
     }
 }

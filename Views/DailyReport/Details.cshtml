@@ -1,0 +1,15 @@
+﻿@model DailyReport
+
+<h3>Daily Report for @Model.Date.ToShortDateString()</h3>
+
+<div>
+    <h1>My mood:</h1>
+    <p>@Model.Mood.Name\n</p>
+
+    <h1>My journal:</h1>
+    <p>@Model.Journal.Text\n</p>
+
+    <h1>My meditations:\n</h1>
+    <p>no meditations</p>
+
+</div>

@@ -157,3 +157,4 @@ C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPa
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\Meditation\Index.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\PlayMeditation.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Details.cshtml.g.cs
