@@ -17,7 +17,7 @@
     {
         <tr>
             
-            <td><a asp-controller="DailyReport" asp-action="Details">@dailyReport.Date.ToShortDateString()</a></td>
+            <td><a asp-controller="DailyReport" asp-action="Detail" asp-route-id="@dailyReport.ID">@dailyReport.Date.ToShortDateString()</a></td>
             <td>@dailyReport.Mood.Name</td>
             <td>@dailyReport.Journal.Text</td>
             

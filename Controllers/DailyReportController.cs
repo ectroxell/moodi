@@ -27,17 +27,18 @@ namespace moodi.Controllers
         public IActionResult Index()
         {
             //get existing daily reports from database
-            
+
             IList<DailyReport> dailyReports = context.DailyReports.Include(c => c.Mood).Include(c => c.Journal).ToList();
-                
+
 
             return View(dailyReports);
         }
 
         //view details for a specific report
-        public IActionResult Details(int id)
+        public IActionResult Detail(int id)
         {
-            DailyReport dailyReport = context.DailyReports.Single(c => c.ID == id);
+
+            var dailyReport = context.DailyReports.Where(c => c.ID == id).Include(c => c.Mood).Include(c => c.Journal).Single();
             return View(dailyReport);
         }
         
@@ -85,7 +86,7 @@ namespace moodi.Controllers
                 context.DailyReports.Add(newDailyReport);
                 context.SaveChanges();
 
-                return View("PlayMeditation");
+                return Redirect("PlayMeditation");
             }
             
             //return user to add page if view model is not valid
