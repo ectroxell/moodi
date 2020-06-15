@@ -10,11 +10,11 @@ namespace moodi.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-
-
-        public Mood(string name)
+        public string Source { get; set; }
+        public Mood(string name, string src)
         {
             Name = name;
+            Source = src;
         }
         public Mood ()
         {

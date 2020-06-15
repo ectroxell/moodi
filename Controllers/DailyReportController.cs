@@ -34,6 +34,7 @@ namespace moodi.Controllers
             return View(dailyReports);
         }
 
+
         //view details for a specific report
         public IActionResult Detail(int id)
         {
@@ -48,13 +49,13 @@ namespace moodi.Controllers
             if (!context.Moods.Any())
             {
                 // create default mood choices
-                context.Moods.Add(new Mood("Happy"));
-                context.Moods.Add(new Mood("Content"));
-                context.Moods.Add(new Mood("Energized"));
-                context.Moods.Add(new Mood("Stressed"));
-                context.Moods.Add(new Mood("Anxious"));
-                context.Moods.Add(new Mood("Sad"));
-                context.Moods.Add(new Mood("Depressed"));
+                context.Moods.Add(new Mood("Happy",""));
+                context.Moods.Add(new Mood("Content",""));
+                context.Moods.Add(new Mood("Energized", ""));
+                context.Moods.Add(new Mood("Stressed", ""));
+                context.Moods.Add(new Mood("Anxious", ""));
+                context.Moods.Add(new Mood("Sad", "~/media/sad.mp3"));
+                context.Moods.Add(new Mood("Depressed", ""));
                 context.SaveChanges();
             }
 
@@ -85,18 +86,14 @@ namespace moodi.Controllers
                 context.Journals.Add(newDailyReportJournal);
                 context.DailyReports.Add(newDailyReport);
                 context.SaveChanges();
-
-                return Redirect("PlayMeditation");
+                
+                //redirect user to meditation page
+                return Redirect("../Meditation/Index");
+        
             }
-            
-            //return user to add page if view model is not valid
+            //return user to form if invalid
             return View(addDailyReportViewModel);
-        }
-
-        public IActionResult PlayMeditation()
-        {
             
-            return View();
         }
 
 
