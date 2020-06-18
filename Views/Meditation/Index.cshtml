@@ -1,7 +1,9 @@
-﻿@model moodi.Models.Mood
+﻿@model moodi.ViewModels.MeditationViewModel
 
+<h3>Feeling @Model.Mood.Name?</h3>
+
+<p><br />Check out this meditation:</p>
 
 <audio controls>
-    <source src="@Model.Source" type="audio/mpeg" />
+    <source src=@Model.Meditation.SourceFile type="audio/mpeg" />
 </audio>
-    

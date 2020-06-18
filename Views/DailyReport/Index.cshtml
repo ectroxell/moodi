@@ -1,34 +1,29 @@
 ﻿@model List<DailyReport>
-<div>
-<h1>My moodi</h1>
-</div>
-
-<div class="table-hover">
-<table id="dailyReportTable" class="table">
-    <thead class="thead-light">
-        <tr>
-            <th>Date</th>
-            <th>Mood</th>
-            <th>Journal</th>
-        </tr>
-    </thead>
-    
-    @foreach (var dailyReport in Model)
-    {
-        <tr>
-            
-            <td><a asp-controller="DailyReport" asp-action="Detail" asp-route-id="@dailyReport.ID">@dailyReport.Date.ToShortDateString()</a></td>
-            <td>@dailyReport.Mood.Name</td>
-            <td>@dailyReport.Journal.Text</td>
-            
-        </tr>
-    }
-    
-</table>
-</div>
-
+<header>
+    <h1>My moodi</h1>
+</header>
 
 <a asp-controller="DailyReport" asp-action="Add">Make daily report</a>
 
+<div class="table-hover">
+    <table id="dailyReportTable" class="table">
 
+        <thead class="thead-light">
+            <tr>
+                <th>Date</th>
+                <th>Mood</th>
+                <th>Journal</th>
+            </tr>
+        </thead>
 
+        @foreach (var dailyReport in Model)
+        {
+            <tr>
+
+                <td><a asp-controller="DailyReport" asp-action="Detail" asp-route-id="@dailyReport.ID">@dailyReport.Date.ToShortDateString()</a></td>
+                <td>@dailyReport.Mood.Name</td>
+                <td>@dailyReport.Journal.Text</td>
+            </tr>
+        }
+    </table>
+</div>

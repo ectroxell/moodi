@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace moodi.Models
 {
-    public class Mood
+    public class Meditation
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public Mood(string name)
+        public string SourceFile { get; set; }
+        public Meditation() { }
+        public Meditation(string src)
         {
-            Name = name;
-        }
-        public Mood ()
-        {
+            SourceFile = src;
         }
     }
 }
