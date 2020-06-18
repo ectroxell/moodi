@@ -10,6 +10,8 @@
     <p>@Model.Journal.Text</p>
 
     <h6>My meditations:</h6>
-    <p>no meditations</p>
-
+    @if (Model.Meditation != null)
+    {
+        <p>@Model.Meditation</p>
+    }
 </div>

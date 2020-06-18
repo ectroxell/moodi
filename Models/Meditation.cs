@@ -8,8 +8,13 @@ namespace moodi.Models
     public class Meditation
     {
         public int ID { get; set; }
+        public string Name { get; set; }
         public string SourceFile { get; set; }
-        public Meditation() { }
+
+        public Meditation()
+        {
+        }
+
         public Meditation(string src)
         {
             SourceFile = src;

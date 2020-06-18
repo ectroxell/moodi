@@ -25,7 +25,6 @@ namespace moodi.Controllers
 
             if (!context.Meditations.Any())
             {
-                // create default mood choices
                 context.Meditations.Add(new Meditation("/media/happy.mp3"));
                 context.Meditations.Add(new Meditation("/media/energized.mp3"));
                 context.Meditations.Add(new Meditation("/media/content.mp3"));
