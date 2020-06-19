@@ -9,15 +9,11 @@ namespace moodi.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public string SourceFile { get; set; }
 
         public Meditation()
         {
-        }
-
-        public Meditation(string src)
-        {
-            SourceFile = src;
         }
     }
 }

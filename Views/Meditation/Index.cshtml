@@ -2,8 +2,14 @@
 
 <h3>Feeling @Model.Mood.Name?</h3>
 
-<p><br />Check out this meditation:</p>
+<p>Check out this meditation:</p>
 
+<h5>@Model.Meditation.Name</h5>
 <audio controls>
     <source src=@Model.Meditation.SourceFile type="audio/mpeg" />
 </audio>
+
+<h6>Description:</h6>
+<p>@Model.Meditation.Description</p>
+
+<button asp-controller="DailyReport" asp-action="Index">Back to dashboard</button>

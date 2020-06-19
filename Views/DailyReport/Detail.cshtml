@@ -9,9 +9,11 @@
     <h6>My journal:</h6>
     <p>@Model.Journal.Text</p>
 
-    <h6>My meditations:</h6>
     @if (Model.Meditation != null)
     {
-        <p>@Model.Meditation</p>
+        <h6>My meditations:</h6>
+        <p>@Model.Meditation.Name</p>
     }
 </div>
+
+<button asp-controller="DailyReport" asp-action="Index">Back to dashboard</button>

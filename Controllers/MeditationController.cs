@@ -21,20 +21,6 @@ namespace moodi.Controllers
 
         public IActionResult Index()
         {
-            // create meditations if not already in db
-
-            if (!context.Meditations.Any())
-            {
-                context.Meditations.Add(new Meditation("/media/happy.mp3"));
-                context.Meditations.Add(new Meditation("/media/energized.mp3"));
-                context.Meditations.Add(new Meditation("/media/content.mp3"));
-                context.Meditations.Add(new Meditation("/media/stressed.mp3"));
-                context.Meditations.Add(new Meditation("/media/anxious.mp3"));
-                context.Meditations.Add(new Meditation("/media/sad.mp3"));
-                context.Meditations.Add(new Meditation("/media/depressed.mp3"));
-                context.SaveChanges();
-            }
-
             // get most recent daily report
             IList<DailyReport> dailyReports = context.DailyReports.Include(c => c.Mood).ToList();
             Mood mood = dailyReports.Last().Mood;

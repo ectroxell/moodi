@@ -60,6 +60,21 @@ namespace moodi.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Meditations",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    SourceFile = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Meditations", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Moods",
                 columns: table => new
                 {
@@ -185,8 +200,9 @@ namespace moodi.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(nullable: false),
-                    MoodID = table.Column<int>(nullable: false),
-                    JournalID = table.Column<int>(nullable: false)
+                    MoodID = table.Column<int>(nullable: true),
+                    JournalID = table.Column<int>(nullable: true),
+                    MeditationID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -196,13 +212,19 @@ namespace moodi.Migrations
                         column: x => x.JournalID,
                         principalTable: "Journals",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_DailyReports_Meditations_MeditationID",
+                        column: x => x.MeditationID,
+                        principalTable: "Meditations",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_DailyReports_Moods_MoodID",
                         column: x => x.MoodID,
                         principalTable: "Moods",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -250,6 +272,11 @@ namespace moodi.Migrations
                 column: "JournalID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DailyReports_MeditationID",
+                table: "DailyReports",
+                column: "MeditationID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DailyReports_MoodID",
                 table: "DailyReports",
                 column: "MoodID");
@@ -283,6 +310,9 @@ namespace moodi.Migrations
 
             migrationBuilder.DropTable(
                 name: "Journals");
+
+            migrationBuilder.DropTable(
+                name: "Meditations");
 
             migrationBuilder.DropTable(
                 name: "Moods");

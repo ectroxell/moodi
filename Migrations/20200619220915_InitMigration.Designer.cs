@@ -10,8 +10,8 @@ using moodi.Data;
 namespace moodi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200617193617_AddMeditationObj")]
-    partial class AddMeditationObj
+    [Migration("20200619220915_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -234,12 +234,17 @@ namespace moodi.Migrations
                     b.Property<int?>("JournalID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MeditationID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MoodID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.HasIndex("JournalID");
+
+                    b.HasIndex("MeditationID");
 
                     b.HasIndex("MoodID");
 
@@ -267,6 +272,12 @@ namespace moodi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SourceFile")
                         .HasColumnType("nvarchar(max)");
@@ -347,6 +358,10 @@ namespace moodi.Migrations
                     b.HasOne("moodi.Models.Journal", "Journal")
                         .WithMany()
                         .HasForeignKey("JournalID");
+
+                    b.HasOne("moodi.Models.Meditation", "Meditation")
+                        .WithMany()
+                        .HasForeignKey("MeditationID");
 
                     b.HasOne("moodi.Models.Mood", "Mood")
                         .WithMany()

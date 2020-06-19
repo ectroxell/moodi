@@ -32,25 +32,12 @@ namespace moodi.Controllers
         //view details for a specific report
         public IActionResult Detail(int id)
         {
-            var dailyReport = context.DailyReports.Where(c => c.ID == id).Include(c => c.Mood).Include(c => c.Journal).Single();
+            var dailyReport = context.DailyReports.Where(c => c.ID == id).Include(c => c.Mood).Include(c => c.Journal).Include(c => c.Meditation).Single();
             return View(dailyReport);
         }
 
         public IActionResult Add()
         {
-            if (!context.Moods.Any())
-            {
-                // create default mood choices
-                context.Moods.Add(new Mood("Happy"));
-                context.Moods.Add(new Mood("Content"));
-                context.Moods.Add(new Mood("Energized"));
-                context.Moods.Add(new Mood("Stressed"));
-                context.Moods.Add(new Mood("Anxious"));
-                context.Moods.Add(new Mood("Sad"));
-                context.Moods.Add(new Mood("Depressed"));
-                context.SaveChanges();
-            }
-
             //create view model
             IList<Mood> moods = context.Moods.ToList();
             AddDailyReportViewModel addDailyReportViewModel = new AddDailyReportViewModel(moods);
@@ -79,7 +66,7 @@ namespace moodi.Controllers
                 context.SaveChanges();
 
                 //redirect user to meditation page
-                return Redirect($"../Meditation");
+                return Redirect("../Meditation");
             }
             //return user to form if invalid
             return View(addDailyReportViewModel);

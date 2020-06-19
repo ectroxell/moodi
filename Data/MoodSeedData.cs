@@ -8,15 +8,20 @@ using System.Threading.Tasks;
 
 namespace moodi.Data
 {
-    public static class MoodSeedData
+    public class MoodSeedData
     {
-        public static void Initialize(IServiceProvider serviceProvider) 
+        public static void Initialize(IServiceProvider serviceProvider)
         {
-            var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
-            context.Database.EnsureCreated();
-            if (!context.Moods.Any())
+            using (var context = new ApplicationDbContext(
+                serviceProvider.GetRequiredService<
+                    DbContextOptions<ApplicationDbContext>>()))
             {
-                // create default mood choices
+                // Look for any moods.
+                if (context.Moods.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
                 context.Moods.Add(new Mood() { Name = "Happy" });
                 context.Moods.Add(new Mood() { Name = "Content" });
                 context.Moods.Add(new Mood() { Name = "Energized" });
@@ -26,7 +31,6 @@ namespace moodi.Data
                 context.Moods.Add(new Mood() { Name = "Depressed" });
                 context.SaveChanges();
             }
-
         }
     }
 }
