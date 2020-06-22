@@ -157,3 +157,10 @@ C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPa
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\Meditation\Index.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Detail.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
