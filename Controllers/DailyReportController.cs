@@ -38,7 +38,7 @@ namespace moodi.Controllers
         //view details for a specific report
         public IActionResult Detail(int id)
         {
-            var dailyReport = context.DailyReports.Where(c => c.ID == id).Include(c => c.Mood).Include(c => c.Journal).Include(c => c.Meditation).Single();
+            var dailyReport = context.DailyReports.Where(c => c.ID == id).Include(c => c.Mood).Include(c => c.Journal).Single();
             return View(dailyReport);
         }
 
@@ -46,7 +46,8 @@ namespace moodi.Controllers
         {
             //create view model
             IList<Mood> moods = context.Moods.ToList();
-            AddDailyReportViewModel addDailyReportViewModel = new AddDailyReportViewModel(moods);
+            IList<int> scale = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            AddDailyReportViewModel addDailyReportViewModel = new AddDailyReportViewModel(moods, scale);
 
             return View(addDailyReportViewModel);
         }
@@ -65,7 +66,8 @@ namespace moodi.Controllers
                     UserID = currentUser.Id,
                     Date = DateTime.Now,
                     Mood = newDailyReportMood,
-                    Journal = newDailyReportJournal
+                    Journal = newDailyReportJournal,
+                    MoodIntensity = addDailyReportViewModel.MoodIntensity
                 };
 
                 //add daily report to existing reports

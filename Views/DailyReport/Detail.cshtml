@@ -5,15 +5,10 @@
 <div>
     <h6>My mood:</h6>
     <p>@Model.Mood.Name</p>
+    <h6>Intensity (1-10):</h6><p>@Model.MoodIntensity</p>
 
     <h6>My journal:</h6>
     <p>@Model.Journal.Text</p>
-
-    @if (Model.Meditation != null)
-    {
-        <h6>My meditations:</h6>
-        <p>@Model.Meditation.Name</p>
-    }
 </div>
 
 <button asp-controller="DailyReport" asp-action="Index">Back to dashboard</button>

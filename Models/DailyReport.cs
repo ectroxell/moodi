@@ -11,7 +11,7 @@ namespace moodi.Models
         public int UserID { get; set; }
         public DateTime Date { get; set; }
         public Mood Mood { get; set; }
+        public int MoodIntensity { get; set; }
         public Journal Journal { get; set; }
-        public Meditation Meditation { get; set; }
     }
 }

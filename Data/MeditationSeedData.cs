@@ -44,7 +44,7 @@ namespace moodi.Data
                 {
                     Name = "3-minute Mindful Breathing Meditation (Relieve Stress)",
                     Description = "Feel more settled and calm by spending a few minutes focused on your breathing.  A 3-minute Mindful Breathing mindfulness meditation created by Stop, Breathe & Think. ",
-                    SourceFile = "/media/strssed.mp3"
+                    SourceFile = "/media/stressed.mp3"
                 };
                 Meditation anxious = new Meditation()
                 {
