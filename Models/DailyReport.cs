@@ -8,6 +8,7 @@ namespace moodi.Models
     public class DailyReport
     {
         public int ID { get; set; }
+        public int UserID { get; set; }
         public DateTime Date { get; set; }
         public Mood Mood { get; set; }
         public Journal Journal { get; set; }

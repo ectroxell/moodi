@@ -1,7 +1,6 @@
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\moodi.StaticWebAssets.xml
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\moodi.exe
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\moodi.deps.json
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\moodi.runtimeconfig.json
@@ -14,9 +13,6 @@ C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.C
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -32,8 +28,6 @@ C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.C
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
@@ -152,9 +146,6 @@ C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.Code
 C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Add.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Index.cshtml.g.cs
-C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.csproj.CoreCompileInputs.cache
-C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\Meditation\Index.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Views\DailyReport\Detail.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
@@ -164,3 +155,16 @@ C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\P
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\moodi.StaticWebAssets.xml
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\emmac\source\repos\moodi\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.csproj.CoreCompileInputs.cache
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\moodi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emmac\source\repos\moodi\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs

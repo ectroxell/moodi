@@ -13,6 +13,7 @@ namespace moodi.Data
         public DbSet<Mood> Moods { get; set; }
         public DbSet<Journal> Journals { get; set; }
         public DbSet<Meditation> Meditations { get; set; }
+        public override DbSet<AppUser> Users { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
              : base(options)

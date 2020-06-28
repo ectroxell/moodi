@@ -203,6 +203,7 @@ namespace moodi.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    UserID = table.Column<int>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     MoodID = table.Column<int>(nullable: true),
                     JournalID = table.Column<int>(nullable: true),

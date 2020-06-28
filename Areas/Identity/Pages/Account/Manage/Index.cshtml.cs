@@ -34,8 +34,10 @@ namespace moodi.Areas.Identity.Pages.Account.Manage
         public class InputModel
         {
             [Phone]
-            [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required, DataType(DataType.Text), Display(Name = "Username")]
+            public string UserName { get; set; }
 
             [Required, DataType(DataType.Text), Display(Name = "First Name")]
             public string FirstName { get; set; }
@@ -59,7 +61,8 @@ namespace moodi.Areas.Identity.Pages.Account.Manage
                 Email = email,
                 PhoneNumber = phoneNumber,
                 FirstName = user.FirstName,
-                LastName = user.LastName
+                LastName = user.LastName,
+                UserName = user.UserName
             };
         }
 

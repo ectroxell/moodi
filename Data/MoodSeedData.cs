@@ -23,8 +23,8 @@ namespace moodi.Data
                 }
 
                 context.Moods.Add(new Mood() { Name = "Happy" });
-                context.Moods.Add(new Mood() { Name = "Content" });
                 context.Moods.Add(new Mood() { Name = "Energized" });
+                context.Moods.Add(new Mood() { Name = "Content" });
                 context.Moods.Add(new Mood() { Name = "Stressed" });
                 context.Moods.Add(new Mood() { Name = "Anxious" });
                 context.Moods.Add(new Mood() { Name = "Sad" });
